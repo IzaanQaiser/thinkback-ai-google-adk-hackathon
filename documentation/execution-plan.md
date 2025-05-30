@@ -15,3 +15,11 @@
 - [ ] Enable gemini api
 - [ ] Install node.js
 - [ ] Install adk cli
+- [ ] Install firebase cli
+- [ ] Clone & Run adk sample project
+- [ ] Sketch system-flow-diagram (initial)
+- [ ] Upload system-flow-diagram to GitHub
+- [ ] Sketch agent-interaction-diagram (initial)
+- [ ] Upload agent-interaction-diagram to GitHub
+- [ ] Sketch dataflow diagram (initial)
+- [ ] Upload dataflow diagram to GitHub
