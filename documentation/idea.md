@@ -25,6 +25,11 @@
 
     - AI global-context-agent - this agent keep up to date on global/user-local events like breaking news, world events, national events, local events, politics, stock market, and things of that nature to stay "connected" with the rest of the world. when invoked by a query, it will accept and active context provided to it by the nlp-agent and the conversational-agent. it will use this active context to select the best few pieces of infomation from its global-context reserve to forward to the search-agent.
 
-    - im sure there are more features we can add but these are the ones i could think of
+    - im sure there are more features we can add but these are the ones i could think of.
 
-7. 
+7. 3 real-world usage scenarios
+    1. user saved a piece of media and wants to quickly find it so they can consume it again
+    2. user feels a certain way and want a piece of media that they think they saved and they want to quickly find it to make them feel a different sort of way + get a plan to do that
+    3. user wants suggestions on things to do based on the things they have saved and they want the suggestion to be rooted in current world context
+
+    - there are probably way more usage scenarios that i am missing but for now these are the ones i could think of.
