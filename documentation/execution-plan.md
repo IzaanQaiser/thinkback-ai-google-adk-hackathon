@@ -29,4 +29,4 @@
 - [ ] Pick blog software + setup
 - [ ] Create blog post outline
 - [ ] Setup screen recording tool (OBS, Loom, Screen Studio)
-- [ ] 
+- [ ] make submission requirements list
