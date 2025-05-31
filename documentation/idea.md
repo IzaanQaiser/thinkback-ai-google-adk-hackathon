@@ -2,7 +2,7 @@
 
 ---
 
-1. **single problem to solve**
+1. **single problem to solve** <br>
 we live in the era of media and information. it's great but there is so much thrown at us everyday, that we don't even realise. there is information and guidance lost amongst entertainment and brainrot, it's possible that you brushed past a life-changing piece of advice, becuase it didn't seem as appealing to you as the subway surfers accompanied reddit story time video that came right before it. thinkback.ai aims to solve this issue by providing consumers a one-stop hub for all the content and information they want to hold on to for future reference, letting them come back to it at a time that works for them.
 
 ---
@@ -18,7 +18,7 @@ people currently save content by bookmarking it, saving it to a collection or to
 
 ---
 
-3. **target users**  
+3. **target users**  <br>
 anybody who gets information from the internet. be it youtube, x, instagram, reddit, or even inspiration that you see online, anyone who wants to remember something they found on the internet can find benefit in the services provided by thinkback.ai  
 
 - **Students** (e.g., saves study tips, lectures, career advice)  
@@ -29,7 +29,7 @@ anybody who gets information from the internet. be it youtube, x, instagram, red
 
 ---
 
-4. **what does it do?**  
+4. **what does it do?**  <br>
 thinkback.ai provides users with a personalised dashboard where they can store and collect the content and media they find on the internet. the application accepts their submission and uses AI to categorise it into various genres within their collection. when they feel they are ready to access it, they can return to the application and retrieve it through a multitude of different AI-powered processes.  
 
 They can talk to the AI in a conversation (much like how we talk to chat-gpt) and describe the video to the model, after which the model will match their description to the appropriate entry in the collection and retrieve said entry. The AI can also stay up to date with current world affairs (politics, stock market, breaking events, time of year) and automatically suggest related content from the user's collection based on that.
@@ -45,7 +45,7 @@ Summary of capabilities:
 
 ---
 
-5. **why is it valuable / why is it better than the alternatives?**  
+5. **why is it valuable / why is it better than the alternatives?**  <br>
 there is so much information that if we just applied at the right time can change our lives. the problem is that a lot of the times, we are consuming this information on platforms like YouTube Shorts, X, Instagram, and Reddit. these platforms are engineered to be addictive and to keep users on them for as long as possible. additionally, the saving and library system that many of these apps offer are static and oftentimes useless.  
 
 it's easy to save a cool instagram reel that you found but how often do you actually go back and look for it when you want it? what if you forget about it? what if you saved it a long time ago and there are hundreds of other reels and posts above it?  
@@ -59,7 +59,7 @@ Given the capabilities and advancements of modern day technologies, this is an a
 
 ---
 
-6. **value proposition**  
+6. **value proposition**  <br>
 thinkback.ai is your personal AI-powered media brain — helping you **store**, **organize**, and **retrieve** the most important content you consume, exactly when it’s most helpful to you.
 
 ---
@@ -85,7 +85,15 @@ thinkback.ai is your personal AI-powered media brain — helping you **store**, 
 
 8. **define features**
 
-(You already wrote this section extremely well — no changes made)
+    - AI collection + classification-agent - when a user wants to save a piece of media/content, they can give it to the AI collection + classification agent which will analyze and identifiers within the media (transcripts, titles, contents, descriptions, etc) and provide it with a main tag (e.g. motivational, financial, entertainment, academic), secondary tags (e.g. david goggins, workouts, betterment - for motivational, stock market, buy, advice - for financial, minecraft, buildings, story - for entertainment, chemistry, bonds, activation energy - for academic), and metadata to be able to unequivocally identify what the saved content is about.
+
+    - AI search-agent - collects as much information as possible (context) from the conversational-agent, nlp-agent, and global-context-agent and uses it to identify metadata, secondary tags, and main tags on saved entries that best match the context given to it. it then makes an educated decision on what entry (or entries) best fit the context given to it, selects it, and provides it to the conversational-agent.
+
+    - AI conversational-agent (search) - the user (when they want to retrieve some content and they know what they want) can speak to the conversational agent and say somehting like "I saved a video a couple of days about about how to build a bridge in minecraft, can you fetch it for me?" and the conversational-agent will understand that the query is a **direct search**, and hand it over to the search-agent to retrieve the requested media. when the requested media is returned to the conversational-agent, it can give it to the user and a short message like "here's the video you requested. enjoy!"
+
+    - AI conversational-agent (suggestion) - the user (when they want to retrieve some content and they don't know what they want) can speak to the conversational-agent and say somehting like "I feel unmotivated right now. is there anything i saved before that can help me?" and the conversational-agent will understand that the query is **not a direct search** and will invoke the assistance of the nlp-agent, which will read and extract the emotion + context of the query. in this example the extracted context would be "unmotivated, lethargic, confused" the nlp-agent would then generate the positvie anti-thesis of this context (in this example, motivated, energetic, and laser-focused) and related terms. the conversational-agent will then hand its context, and the nlp-agent will hand its context both over to the search-agent which will also consider the context provided to it by the global-context-agent, and it will find the best matching entry (or entries). once these entries are found, it will forward them over to the conversational-agent and the conversational agent will provide that entry (or entries) to the user with a short action plan/what to do next that they can follow.
+
+    - AI global-context-agent - this agent keep up to date on global/user-local events like breaking news, world events, national events, local events, politics, stock market, and things of that nature to stay "connected" with the rest of the world. when invoked by a query, it will accept and active context provided to it by the nlp-agent and the conversational-agent. it will use this active context to select the best few pieces of infomation from its global-context reserve to forward to the search-agent.
 
 ---
 
@@ -162,5 +170,4 @@ thinkback.ai is your personal AI-powered media brain — helping you **store**, 
 
 15. **10 sentence summary** <br>
 Thinkback.ai is a personal AI-powered memory system that helps users save and intelligently retrieve meaningful content they encounter online. The core problem it solves is the loss of valuable information in a sea of digital distraction — users consume life-changing content but forget it or never revisit it. Unlike static saving tools like bookmarks or watch-later lists, Thinkback turns passive saving into smart, contextual, and emotional retrieval. Users submit content (via link or upload), and an AI collection agent classifies it by topic, emotion, and metadata.
-
 When retrieval is needed, users can talk to a conversational AI, which collaborates with an NLP agent (to detect emotions) and a search agent (to match context with saved items). A global context agent tracks external events (like market crashes or news) to proactively surface relevant past content. These agents form a modular architecture that enables Thinkback to retrieve forgotten or emotionally relevant content on-demand. The MVP focuses on storing content, auto-tagging it, and allowing direct or emotion-based retrieval via chat. The end goal is to make Thinkback a dynamic, emotionally intelligent content companion that resurfaces the right content at the right time — even if you forgot you ever saved it.
