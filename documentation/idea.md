@@ -3,7 +3,7 @@
 ---
 
 1. **single problem to solve** <br>
-we live in the era of media and information. it's great but there is so much thrown at us everyday, that we don't even realise. there is information and guidance lost amongst entertainment and brainrot, it's possible that you brushed past a life-changing piece of advice, becuase it didn't seem as appealing to you as the subway surfers accompanied reddit story time video that came right before it. thinkback.ai aims to solve this issue by providing consumers a one-stop hub for all the content and information they want to hold on to for future reference, letting them come back to it at a time that works for them.
+we live in the era of media and information. it's great, but there is so much thrown at us everyday, that we don't even realise. there is information and guidance lost amongst entertainment and brainrot, it's possible that you brushed past a life-changing piece of advice, becuase it didn't seem as appealing to you as the subway surfers accompanied reddit story time video that came right before it. thinkback.ai aims to solve this issue by providing consumers a one-stop hub for all the content and information they want to hold on to for future reference, letting them come back to it at a time that works for them.
 
 ---
 
