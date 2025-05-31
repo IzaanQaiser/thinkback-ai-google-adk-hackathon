@@ -7,7 +7,7 @@
 - [ ] Finalise scenarios
 - [ ] Finalise execution-plan
 - [ ] Create github repository
-- [ ] [Read google + hackathon resources](https://cloud.google.com/discover/what-are-ai-agents)
+- [ ] [Read google + hackathon resources](https://googlecloudmultiagents.devpost.com/resources)
 - [ ] Create google cloud project
 - [ ] Enable cloud run
 - [ ] Enable firestone
