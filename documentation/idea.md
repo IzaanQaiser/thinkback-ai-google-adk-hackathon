@@ -155,18 +155,21 @@ thinkback.ai is your personal AI-powered media brain — helping you **store**, 
 11. **MVP scope (hackathon)**
 
 ✅ MVP includes:  
-- Save content via link (YouTube, TikTok, etc.)  
-- Auto-classify via AI (main tag + metadata)  
+- Save content via link (YouTube, TikTok, etc.) + notes 
+- Auto-classify via AI (main tag + secondary tag + metadata + notes)  
 - Retrieve via conversational interface using:  
   - Direct query (“I saved X”)  
-  - Emotional query (“I feel Y” → show saved Z)  
-- Store and display collection in a simple dashboard  
+  - Emotional query (“I feel Y” → show saved Z)
+  - Global-context ("X is happening in the world so you should do Y")  
+- Store and display collection in a simple dashboard
+- Web application  
 
-🚫 Not in MVP:  
-- Full global-context integration  
+🚫 Not in MVP:
 - Multi-user/shared collections  
 - Push notifications  
-- Browser extension  
+- Browser extension
+- Mobile application
+- Share button integration in apps  
 
 ---
 
