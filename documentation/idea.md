@@ -118,23 +118,23 @@ thinkback.ai is your personal AI-powered media brain — helping you **store**, 
 
 9. **real-world usage scenarios**
 
-1. Direct Retrieval <br>
-  The user remembers saving a specific piece of content — like a video, article, or voice note — and wants to quickly find it by searching keywords, tags, or personal notes.
+  1. Direct Retrieval <br>
+    The user remembers saving a specific piece of content — like a video, article, or voice note — and wants to quickly find it by searching keywords, tags, or personal notes.
 
-2. Emotional Search & Support <br>
-  The user is feeling overwhelmed, anxious, or unmotivated. They want to express how they feel and receive AI-curated content they’ve saved in the past — paired with a reflection or plan to improve their state.
+  2. Emotional Search & Support <br>
+    The user is feeling overwhelmed, anxious, or unmotivated. They want to express how they feel and receive AI-curated content they’ve saved in the past — paired with a reflection or plan to improve their state.
 
-3. Smart Suggestions Based on Current Context <br>
-  The user wants suggestions on what to watch, read, or reflect on — not just randomly, but based on their saved content and current world events (e.g., “It’s finals season” → resurface productivity videos).
+  3. Smart Suggestions Based on Current Context <br>
+    The user wants suggestions on what to watch, read, or reflect on — not just randomly, but based on their saved content and current world events (e.g., “It’s finals season” → resurface productivity videos).
 
-4. Passive Resurfacing (Serendipitous Recall) <br>
-  Without any prompt, Thinkback.ai proactively resurfaces long-forgotten but emotionally-relevant content — like a motivational podcast during a low week, or a calming video after frequent journaling about stress.
+  4. Passive Resurfacing (Serendipitous Recall) <br>
+    Without any prompt, Thinkback.ai proactively resurfaces long-forgotten but emotionally-relevant content — like a motivational podcast during a low week, or a calming video after frequent journaling about stress.
 
-5. Emotionally-Aware Journaling Feedback <br>
-  The user writes or voice-records a journal entry. Thinkback.ai analyzes its emotional tone, connects it to relevant saved content, and offers perspective, validation, or a growth-oriented suggestion.
+  5. Emotionally-Aware Journaling Feedback <br>
+    The user writes or voice-records a journal entry. Thinkback.ai analyzes its emotional tone, connects it to relevant saved content, and offers perspective, validation, or a growth-oriented suggestion.
 
-6. Reflective Habit Formation <br>
-  Over time, the system notices recurring moods or topics in the user’s journaling and saved content. It nudges them toward healthier patterns, habits, or inspirational themes based on their own digital history.
+  6. Reflective Habit Formation <br>
+    Over time, the system notices recurring moods or topics in the user’s journaling and saved content. It nudges them toward healthier patterns, habits, or inspirational themes based on their own digital history.
 
  
 
