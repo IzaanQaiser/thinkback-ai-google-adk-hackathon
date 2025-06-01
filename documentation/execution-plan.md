@@ -207,7 +207,7 @@ class [AgentName](Agent):
 
 <br>
 
-### ✅ Deliverables by End of Day (June 1)
+### ✅ Deliverables by End of Day (June 2)
 
 * [ ] Backend live on `localhost:8000`
 * [ ] 5 agents created as Python classes using `agentkit`
@@ -217,5 +217,117 @@ class [AgentName](Agent):
 
 <br>
 
+## 📥 **Phase 2 — Core Agent Logic + Save Flow (June 3)**
+
+### 🤖 classification\_agent: Make It Work
+
+#### Step 1 — Basic Content Classification
+
+* [ ] Go to `agents/classification_agent/agent.py`
+* [ ] Add logic to:
+
+  * Accept a URL or plain text
+  * Generate dummy tags (e.g. `"motivation"`, `"finance"`)
+  * Return `main_tag`, `secondary_tags`, `title`, and `timestamp`
+
+```python
+def run(self, message):
+    content = message["content"]
+    # fake logic for now
+    return {
+        "main_tag": "motivation",
+        "secondary_tags": ["productivity", "energy"],
+        "title": "Get More Done With Less Stress",
+        "timestamp": "2025-06-02T12:00:00"
+    }
+```
+
+#### Step 2 — Create `/save` Route
+
+* [ ] In `backend/router.py`, add:
+
+```python
+from fastapi import APIRouter, Request
+from agent_registry import classification_agent
+
+router = APIRouter()
+
+@router.post("/save")
+async def save_content(req: Request):
+    body = await req.json()
+    result = classification_agent.run({"content": body["content"]})
+    return result
+```
+
+* [ ] Connect `router.py` to `main.py`:
+
+```python
+from fastapi import FastAPI
+from router import router
+
+app = FastAPI()
+app.include_router(router)
+```
+
+* [ ] Test with `curl` or Postman:
+
+```bash
+curl -X POST http://localhost:8000/save -H "Content-Type: application/json" -d '{"content": "video about being disciplined"}'
+```
+
+<br>
+
+### 🧠 Local Memory (Mock DB for Now)
+
+#### Step 3 — Store in-memory per user
+
+* [ ] In `backend/data.py`, create:
+
+```python
+mock_db = {
+  "user_1": []
+}
+```
+
+* [ ] In `router.py`, modify `/save` route:
+
+```python
+from data import mock_db
+
+# ...
+mock_db["user_1"].append(result)
+```
+
+<br>
+
+### 💻 Frontend — Connect Save Flow
+
+#### Step 4 — Update `/save` page
+
+* [ ] Add input field (`textarea`) for content URL or text
+* [ ] Add submit button → `POST /api/save`
+* [ ] On success, show confirmation
+* [ ] Add call to backend via `fetch('/api/save')`
+
+<br>
+
+### 📋 Dashboard Page (Read from Mock DB)
+
+#### Step 5 — View all saved entries
+
+* [ ] In `/dashboard`:
+
+  * Show mock data list (you can hardcode for now)
+  * Format: `title`, `tags`, `timestamp`
+
+<br>
+
+### ✅ Deliverables by End of Day (June 3)
+
+* [ ] classification\_agent adds tags + metadata
+* [ ] `/save` API returns that data
+* [ ] Data is saved to mock DB
+* [ ] Frontend `/save` → backend → save content
+* [ ] `/dashboard` displays saved mock data
 
 
