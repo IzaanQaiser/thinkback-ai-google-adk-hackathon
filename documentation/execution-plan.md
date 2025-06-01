@@ -2374,6 +2374,284 @@ Write down **2–3 bullet answers** for each and keep them handy.
 * [ ] Backup copies of all media in `submission/` folder
 * [ ] You’re mentally prepped for Q\&A
 
+<br>
+<br>
+
+## **🧠 Phase 21 — Community Push + Backup Strategy + Optional Polish (June 21)**
+🎯 *Goal: Let the world know, protect your work, and give it final polish before bug day.*
+
+---
+
+#### 📣 1. Community Awareness & Marketing
+
+Make people *aware* of what you’ve built before you submit:
+
+##### 🔗 Post on Social Media
+
+* [ ] **LinkedIn**: Make a post about your journey:
+
+  * “Built an AI-powered memory system with multi-agent Gemini & Firebase. Save media → talk to it → get motivation when you need it.”
+  * Attach a short demo clip (GIF or 20s video)
+  * Use hashtags: `#Hackathon #AI #GoogleCloud #Devpost #ThinkbackAI`
+* [ ] **Twitter/X**: Short tweet + thread
+* [ ] **Discord**: Drop a link in relevant hackathon channels and AI communities
+
+##### 🧪 Optional: HackerNews or Reddit
+
+* [ ] Post a “Show HN” or /r/SideProject submission linking the demo
+
+<br>
+
+#### 💾 2. Backup and Archival
+
+Protect all your work **in case anything breaks** tomorrow or during submission.
+
+##### 🔐 GitHub
+
+* [ ] Push latest code to both `main` and `dev` branches
+* [ ] Create a GitHub **release** (e.g. `v1.0-hackathon`)
+
+##### 📦 ZIP Backups
+
+* [ ] Zip entire repo and store in:
+
+  * [ ] Google Drive
+  * [ ] Local USB
+  * [ ] Optional: Dropbox or iCloud
+
+##### 📝 Save Blog Draft
+
+* [ ] Save your blog post as PDF and plain `.md`
+* [ ] Screenshot your Devpost submission and save a backup
+
+<br>
+
+#### 🎨 3. Optional UI Polish
+
+Nice-to-haves (only do if everything else is solid):
+
+* [ ] Smooth fade-in animations for:
+
+  * Journal entries
+  * Smart feed items
+  * Chat messages
+* [ ] Shimmer loading placeholders (e.g., skeleton loaders)
+* [ ] Confetti or micro-animation on first content save
+* [ ] “Built with Gemini AI” badge in footer or sidebar
+* [ ] Update favicon and site title
+
+<br>
+
+#### ✅ Deliverables by End of Day (June 21)
+
+* [ ] At least 1 post on LinkedIn and/or Twitter
+* [ ] Blog and Devpost descriptions backed up
+* [ ] Full project ZIP saved to 2–3 places
+* [ ] UI feels clean, sharp, and final
+* [ ] GitHub has a `v1.0` tagged release
+
+<br>
+<br>
+
+## **🪲 Phase 22 — Bug Day + Full Runthroughs (June 22)**
+🎯 *Goal: Identify and fix every bug, broken flow, or confusing experience before the final submission.*
+
+---
+
+#### 🧪 1. Manual Full App Walkthrough (3–5x)
+
+Act like a new user and walk through every single flow. Do this **multiple times**.
+
+##### 🔁 Test These User Paths:
+
+* [ ] **New user onboarding** → login with Google → redirected to dashboard
+* [ ] **Saving content** → paste URL or text → content is classified → appears in dashboard + timeline
+* [ ] **Chat with AI**:
+
+  * "I saved a video about discipline" → direct search
+  * "I feel stuck and unmotivated" → emotional path → suggestions from past
+* [ ] **Smart feed** shows past resurfaced entries
+* [ ] **Timeline scrolls and filters correctly**
+* [ ] **Journal entry written** → saved → can be retrieved
+* [ ] **Reflective AI response** appears after journaling
+* [ ] **Logout** → data is preserved
+* [ ] Mobile/responsive layout still usable
+
+<br>
+
+#### 🔍 2. Bug Hunt
+
+Create a file `bugs.md` in `/docs/` with all bugs you find.
+
+Categories:
+
+* [ ] ❌ **Frontend**: layout issues, responsiveness, broken states
+* [ ] ❌ **Backend**: failed agent calls, bad responses, missing context
+* [ ] ❌ **Auth**: broken token logic, user isolation errors
+* [ ] ❌ **Firestore**: entries missing or saved incorrectly
+* [ ] ❌ **Smart Feed**: irrelevant or missing resurfaced content
+* [ ] ❌ **Chat**: poor responses, no fallback, broken intents
+* [ ] ❌ **Performance**: pages slow, render lags, chat delay
+* [ ] ❌ **AI**: Gemini prompts returning junk or misclassifications
+
+<br>
+
+#### 🔧 3. Fix Bugs & Add Fallbacks
+
+* [ ] Add `try/catch` or error handlers to **every API call**
+* [ ] Gracefully handle empty states
+* [ ] Validate all Firestore writes (e.g. no undefined fields)
+* [ ] Add loading states (spinners, skeletons) to avoid blank screens
+* [ ] Add fallback Gemini responses like:
+
+  * “I didn’t quite get that. Want to rephrase or try saving more content?”
+
+<br>
+
+#### 🧪 4. Cross-Browser & Device Testing
+
+Test on:
+
+* [ ] Chrome desktop
+* [ ] Safari or Firefox
+* [ ] Android or iOS
+* [ ] Narrow screen (responsive)
+* [ ] Slow network (use dev tools to simulate)
+
+<br>
+
+#### ✅ Deliverables by End of Day (June 22)
+
+* [ ] `bugs.md` has a complete list of issues found and fixed
+* [ ] All major flows tested 3–5x
+* [ ] No crashes, dead ends, or broken interactions
+* [ ] UI polish applied where needed
+* [ ] Confidence is high: you're 100% ready for submission
+
+<br>
+<br>
+
+## **🚀 Phase 23 — Final Submission Day (June 23, 2025)**
+🎯 *Goal: Submit Thinkback.ai to the Google ADK Hackathon in peak condition, with a polished demo, perfect documentation, and zero last-minute errors.*
+
+---
+
+#### ✅ 1. Final App Walkthrough (as a Judge)
+
+Do *one final* clean end-to-end walkthrough while imagining you're a hackathon judge:
+
+* [ ] Can you sign in with Google and start using the product in under 30 seconds?
+* [ ] Is the **core value prop** clear just from the dashboard + chat?
+* [ ] Is the AI retrieval **relevant**, **personal**, and **non-hardcoded**?
+* [ ] Are timelines and resurfacing **visually impressive**?
+* [ ] Does the journal feel **emotional**, **useful**, and **AI-enhanced**?
+* [ ] Would a judge say: *"Whoa. This is actually smart."*
+
+<br>
+
+#### 📹 2. Record Demo Video
+
+* [ ] Use OBS Studio, Screen Studio, or Loom
+
+* [ ] Keep it **under 3 minutes**, clear voiceover, no stutters
+
+* [ ] Cover:
+
+  * 🧠 Problem: Overwhelmed minds, forgotten content
+  * 💡 Solution: Thinkback.ai — AI-powered memory for saved content & thoughts
+  * 💬 Demo: Show save, retrieve, chat, journal, timeline, and smart feed
+  * 🔁 Agents: Explain briefly how agents work (optional overlay or comment)
+
+* [ ] Upload to YouTube, Loom, or unlisted link
+
+* [ ] Add to your Devpost submission
+
+<br>
+
+#### 🧾 3. Final Devpost Checklist
+
+Go to your [Devpost submission page](https://googlecloudmultiagents.devpost.com/) and confirm:
+
+##### 📄 Basic Info
+
+* [ ] Title: **Thinkback.ai – Your AI-Powered Memory**
+* [ ] Tagline: “Save what matters. Recall what heals.”
+
+##### 📂 Project Details
+
+* [ ] 1-paragraph overview
+* [ ] Full description with:
+
+  * Problem
+  * Solution
+  * Features
+  * Tech stack
+  * How Google ADK + Cloud were used
+* [ ] Add GitHub link (make repo public!)
+* [ ] Add demo video link
+* [ ] Add blog post (if done)
+
+##### 🧠 Technical Highlights
+
+* [ ] Mention: **ADK, Gemini Pro, Firestore, FastAPI, Next.js, Tailwind, Firebase Auth**
+* [ ] Explain multi-agent architecture
+* [ ] Attach architecture diagram
+* [ ] Attach agent interaction diagram
+
+##### 🏆 Bonus Content
+
+* [ ] Blog post (with hashtag #adkhackathon)
+* [ ] Open source contribution (PRs or issues to ADK repo)
+* [ ] Region: **North America**
+
+<br>
+
+#### 📂 4. GitHub Repo Polish
+
+* [ ] Final `README.md` includes:
+
+  * 1-paragraph summary
+  * Screenshots or GIFs
+  * Setup instructions
+  * Tech stack
+  * Demo link
+  * Blog link
+  * Agent descriptions (1 sentence each)
+  * Credits
+
+* [ ] All code pushed to `main` or `release` branch
+
+* [ ] `.env.example` and `.gitignore` included
+
+* [ ] Remove ALL API keys and secrets
+
+* [ ] MIT License included (optional)
+
+<br>
+
+#### 🧠 5. Lock It In
+
+* [ ] Final app deployed and working
+* [ ] Final backup created (zip + Google Drive + GitHub)
+* [ ] Screenshots saved of all major features
+* [ ] Blog saved as PDF just in case
+
+<br>
+
+#### ✅ Deliverables for June 23
+
+* [ ] Final project is submitted on Devpost
+* [ ] Demo video recorded and uploaded
+* [ ] GitHub repo polished and clean
+* [ ] All diagrams, docs, and bonus points submitted
+* [ ] You’re officially DONE. 🎉
+
+<br>
+
+💡 *Optional: Celebrate with a post on X, LinkedIn, or Dev.to sharing what you built.*
+Let me know if you want a social post template.
+
+
 
 
 
