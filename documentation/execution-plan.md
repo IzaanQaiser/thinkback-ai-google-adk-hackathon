@@ -122,7 +122,7 @@ Create a file `submission-checklist.md` and add the following:
 <br>
 <br>
 
-# 🧱 **Phase 1 — Project + Agent Scaffolding (June 2)**
+## 🧱 **Phase 1 — Project + Agent Scaffolding (June 2)**
 
 ### 🔧 Backend Setup (ADK + API Base)
 
@@ -139,6 +139,8 @@ Create a file `submission-checklist.md` and add the following:
 * [ ] Run:
   `uvicorn main:app --reload`
   Confirm: `http://localhost:8000` works
+
+<br>
 
 ### 🤖 ADK Agent Scaffolding
 
@@ -172,7 +174,7 @@ class [AgentName](Agent):
 
 * [ ] Import each agent into `agent_registry.py` so they can talk
 
----
+<br>
 
 ### 💻 Frontend Bootstrap
 
@@ -186,13 +188,15 @@ class [AgentName](Agent):
 * [ ] Install Shadcn/UI:
   `npx shadcn-ui@latest init`
 
+<br>
+
 ### 🧪 Frontend Pages (Static for Now)
 
 * [ ] `/save`: input URL, tags, notes
 * [ ] `/dashboard`: list of saved content (mock data for now)
 * [ ] `/chat`: input box to talk to conversational agent
 
----
+<br>
 
 ### 🔁 Local Agent-API Connect
 
@@ -201,7 +205,7 @@ class [AgentName](Agent):
 * [ ] `POST /api/suggest`: route to `nlp_agent + search_agent`
 * [ ] Return dummy responses for now (e.g. `{ title: "Motivation Video", url: "..." }`)
 
----
+<br>
 
 ### ✅ Deliverables by End of Day (June 1)
 
@@ -211,9 +215,7 @@ class [AgentName](Agent):
 * [ ] One dummy API call from frontend to backend (e.g. call /search and display result)
 * [ ] Push to GitHub (`dev` branch)
 
----
+<br>
 
-🔁 Once you're done, reply:
-**“Phase 1 complete — ready for June 2”**
-and I’ll drop **Phase 2: Core Agent Logic + Save Flow**. Let’s ride.
+
 
