@@ -13,8 +13,8 @@
 
 ### 🛠️ Repo + Project Setup
 
-* [ ] Create GitHub repo (`thinkback-ai`)
-* [ ] Initialize with README + MIT License
+~- Create GitHub repo (`thinkback-ai`)~
+- Initialize with README + MIT License
 * [ ] Add folders:
 
   * `/documentation`

@@ -12,3 +12,6 @@ This repo follows my **Ideas-to-Apps** system to turn ideas into full MVPs using
 ## How This Repo Works
 1. Clone it
 2. more to follow
+
+## License
+This project is proprietary. Code is shared only for hackathon judging purposes. All rights reserved by thinkback.ai.
