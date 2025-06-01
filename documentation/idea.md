@@ -1,4 +1,23 @@
 ### thinkback.ai off dome:
+---
+#### table of contents:
+1. single problem to solve
+2. pain point deep-dive
+3. target users
+4. what does it do?
+5. why is it valuable / why is it better than the alternatives?
+6. value proposition
+7. user personas
+8. features
+9. real-world usage scenarios
+10. competitor landscape
+11. MVP scope
+12. supported input methods
+13. privacy + trust
+14. future opportunities
+15. 10-sentence summary
+
+
 
 ---
 
@@ -7,7 +26,7 @@ we live in the era of media and information. it's great, but there is so much th
 
 ---
 
-2. **pain point deep dive**  
+2. **pain point deep-dive**  
 people currently save content by bookmarking it, saving it to a collection or to a playlist. how often do we actually access these things to find what we remember seeing? what about the things we forgot about? it's too much effort, it's too hard to find the things you are looking for, and it does nothing to help you locate the things you forgot about.  
 
 - “I saved it... but where is it?”  
@@ -83,7 +102,7 @@ thinkback.ai is your personal AI-powered media brain — helping you **store**, 
 
 ---
 
-8. **define features**
+8. **features**
 
     - AI collection + classification-agent - when a user wants to save a piece of media/content, they can give it to the AI collection + classification agent which will analyze and identifiers within the media (transcripts, titles, contents, descriptions, etc) and provide it with a main tag (e.g. motivational, financial, entertainment, academic), secondary tags (e.g. david goggins, workouts, betterment - for motivational, stock market, buy, advice - for financial, minecraft, buildings, story - for entertainment, chemistry, bonds, activation energy - for academic), and metadata to be able to unequivocally identify what the saved content is about.
 
@@ -97,15 +116,27 @@ thinkback.ai is your personal AI-powered media brain — helping you **store**, 
 
 ---
 
-9. **3 real-world usage scenarios**
+9. **real-world usage scenarios**
 
-1. user saved a piece of media and wants to quickly find it so they can consume it again  
-2. user feels a certain way and wants a piece of media that they think they saved and they want to quickly find it to make them feel a different sort of way + get a plan to do that  
-3. user wants suggestions on things to do based on the things they have saved and they want the suggestion to be rooted in current world context  
-4. **Direct Retrieval**: User remembers saving a video and wants to find it by description.  
-5. **Emotional Guidance**: User feels anxious or unmotivated and wants helpful content with a plan.  
-6. **World-Aware Suggestions**: User wants insights based on what's happening globally or locally (e.g., market crash triggers saved investing advice).  
-7. **Passive Resurfacing** *(optional future feature)*: AI resurfaces “forgotten” content at just the right moment (like Apple’s Memories or Spotify’s Flashbacks — but useful).  
+1. Direct Retrieval <br>
+  The user remembers saving a specific piece of content — like a video, article, or voice note — and wants to quickly find it by searching keywords, tags, or personal notes.
+
+2. Emotional Search & Support <br>
+  The user is feeling overwhelmed, anxious, or unmotivated. They want to express how they feel and receive AI-curated content they’ve saved in the past — paired with a reflection or plan to improve their state.
+
+3. Smart Suggestions Based on Current Context <br>
+  The user wants suggestions on what to watch, read, or reflect on — not just randomly, but based on their saved content and current world events (e.g., “It’s finals season” → resurface productivity videos).
+
+4. Passive Resurfacing (Serendipitous Recall) <br>
+  Without any prompt, Thinkback.ai proactively resurfaces long-forgotten but emotionally-relevant content — like a motivational podcast during a low week, or a calming video after frequent journaling about stress.
+
+5. Emotionally-Aware Journaling Feedback <br>
+  The user writes or voice-records a journal entry. Thinkback.ai analyzes its emotional tone, connects it to relevant saved content, and offers perspective, validation, or a growth-oriented suggestion.
+
+6. Reflective Habit Formation <br>
+  Over time, the system notices recurring moods or topics in the user’s journaling and saved content. It nudges them toward healthier patterns, habits, or inspirational themes based on their own digital history.
+
+ 
 
 ---
 
@@ -139,7 +170,7 @@ thinkback.ai is your personal AI-powered media brain — helping you **store**, 
 
 ---
 
-12. **supported input methods (planned)**
+12. **supported input methods**
 
 - Link pasting (YouTube, TikTok, Twitter, Reddit, Instagram)  
 - “Share to” from mobile  
