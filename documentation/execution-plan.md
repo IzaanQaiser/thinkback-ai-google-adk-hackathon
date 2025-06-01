@@ -1751,6 +1751,112 @@ Update `context_agent` to do the following:
 * [ ] Journal entries appear in timeline + smart feed
 * [ ] `/journal` polished for demo-ready status
 
+<br>
+<br>
+
+## **Phase 15 — Insights Dashboard, Export, & Final UX Polish**
+🗓️ **Date:** June 15, 2025
+🎯 **Goal:** Give users a full-circle experience with exportable data, visual insights, and polished UX — making the app demo- and investor-ready.
+
+---
+
+### 📊 Step 1 — **Insights Dashboard**
+
+Add a new page: `/insights`
+This page visualizes patterns in the user's saved content & journals.
+
+### Key Sections:
+
+* ✅ **Mood Trends (Last 30 Days)**
+
+  * Line or area chart of detected emotions over time (from journal agent)
+  * Use emojis or tags: 🧠 motivation, 😔 sadness, 💪 energy, 🪷 peace
+
+* ✅ **Tag Frequency**
+
+  * Bar chart or tag cloud showing most used tags across saved media + journals
+
+* ✅ **Media vs. Journaling Balance**
+
+  * Pie chart or stacked bar showing ratio of:
+
+    * Content saved (videos, articles, etc.)
+    * Journals written
+
+* ✅ **Recent Patterns Detected**
+
+  * Gemini-powered insight card (e.g.):
+
+    * “You tend to journal about focus late at night.”
+    * “You save more motivational content on Mondays.”
+
+<br>
+
+### 📁 Step 2 — **Export Data Feature**
+
+Give users ownership of their memories.
+
+* [ ] Add “Export My Data” button on `/insights`
+* [ ] On click:
+
+  * Fetch all entries (saved content + journals) for the user
+  * Structure as JSON or Markdown
+  * Trigger download with filename: `thinkback_export_YYYYMMDD.json`
+
+Optional:
+
+* [ ] Let user choose:
+
+  * Export format (JSON / CSV / Markdown)
+  * Export range (last 7 / 30 / all time)
+
+<br>
+
+### ✨ Step 3 — Final UX Polish
+
+* [ ] Smooth loading animations across all pages
+
+* [ ] Refined typography + spacing in:
+
+  * `/chat` responses
+  * `/dashboard` cards
+  * `/journal` and `/insights`
+
+* [ ] Add subtle hover animations on buttons, cards, icons
+
+* [ ] Scroll to top on route change
+
+<br>
+
+### 🧪 Step 4 — Manual QA Pass
+
+Test every interaction *like a new user*:
+
+* [ ] Create new account → save → journal → chat → reflect
+* [ ] Try weird inputs:
+
+  * Submit blank journal
+  * Ask for content that doesn’t exist
+* [ ] Check for bugs in:
+
+  * Routing
+  * Token usage
+  * Broken links / loaders
+
+<br>
+
+### ✅ Deliverables by End of Day (June 15)
+
+* [ ] `/insights` shows real user data trends
+* [ ] Export to `.json` or `.md` works cleanly
+* [ ] App feels smooth, modern, professional
+* [ ] All key pages styled and responsive
+* [ ] QA checklist completed
+
+<br>
+<br>
+
+
 
 
 
