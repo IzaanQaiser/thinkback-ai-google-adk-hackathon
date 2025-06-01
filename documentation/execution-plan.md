@@ -2191,7 +2191,7 @@ In `search_agent.py`:
 <br>
 <br>
 
-## **Phase 19 — Final UI Polish, Animations, and Delight Features**
+## **Phase 18 — Final UI Polish, Animations, and Delight Features**
 🗓️ **Date:** June 19, 2025
 🎯 **Goal:** Make Thinkback.ai visually stunning, emotionally resonant, and user-delightful. We’re talking transitions, microinteractions, empty states, and UI features that *feel alive*.
 
@@ -2279,7 +2279,7 @@ Small delightful touches:
 <br>
 <br>
 
-## **Phase 20 — Demo, Blog, and Submission Content Prep**
+## **Phase 19 — Demo, Blog, and Submission Content Prep**
 🗓️ **Date:** June 20, 2025
 🎯 **Goal:** Create a winning Devpost submission with a killer demo, polished blog, and tight story. You built the system — now sell the vision.
 
@@ -2377,7 +2377,7 @@ Write down **2–3 bullet answers** for each and keep them handy.
 <br>
 <br>
 
-## **🧠 Phase 21 — Community Push + Backup Strategy + Optional Polish (June 21)**
+## **🧠 Phase 20 — Community Push + Backup Strategy + Optional Polish (June 21)**
 🎯 *Goal: Let the world know, protect your work, and give it final polish before bug day.*
 
 ---
@@ -2453,7 +2453,7 @@ Nice-to-haves (only do if everything else is solid):
 <br>
 <br>
 
-## **🪲 Phase 22 — Bug Day + Full Runthroughs (June 22)**
+## **🪲 Phase 21 — Bug Day + Full Runthroughs (June 22)**
 🎯 *Goal: Identify and fix every bug, broken flow, or confusing experience before the final submission.*
 
 ---
@@ -2531,7 +2531,7 @@ Test on:
 <br>
 <br>
 
-## **🚀 Phase 23 — Final Submission Day (June 23, 2025)**
+## **🚀 Phase 22 — Final Submission Day (June 23, 2025)**
 🎯 *Goal: Submit Thinkback.ai to the Google ADK Hackathon in peak condition, with a polished demo, perfect documentation, and zero last-minute errors.*
 
 ---
