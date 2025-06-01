@@ -1,6 +1,4 @@
-🔗 [google-adk-hackathon-technical](https://chatgpt.com/c/6837caba-9288-8011-908b-78f1c56a88d4) <br>
-🔗 [google-adk-hackathon-design](https://chatgpt.com/g/g-p-68398ad2d004819189e4eb95f7f3e602-google-adk-hackathon/c/6838ce55-b514-8011-9273-674dca2168d8)
-
+🔗 [google-adk-hackathon-chat](https://chatgpt.com/c/683b9112-5ea4-8011-ad8b-dc86427dbcbc)
 # execution-plan (010625-230625):
 ## ✅ **Phase 0 — Setup + Planning + Foundation + Branding (June 1)**
 
@@ -1971,7 +1969,7 @@ Make sure these are ✅ before June 23:
 <br>
 <br>
 
-## **Phase 17 — Bug Bash, Accessibility & Mobile Polish**
+## **Phase 16 — Bug Bash, Accessibility & Mobile Polish**
 🗓️ **Date:** June 17, 2025
 🎯 **Goal:** Hunt down bugs, polish mobile responsiveness, and add accessibility upgrades to ensure Thinkback.ai works cleanly for every user and looks production-ready.
 
@@ -2191,7 +2189,7 @@ In `search_agent.py`:
 <br>
 <br>
 
-## **Phase 18 — Final UI Polish, Animations, and Delight Features**
+## **Phase 17 — Final UI Polish, Animations, and Delight Features**
 🗓️ **Date:** June 19, 2025
 🎯 **Goal:** Make Thinkback.ai visually stunning, emotionally resonant, and user-delightful. We’re talking transitions, microinteractions, empty states, and UI features that *feel alive*.
 
@@ -2279,7 +2277,7 @@ Small delightful touches:
 <br>
 <br>
 
-## **Phase 19 — Demo, Blog, and Submission Content Prep**
+## **Phase 18 — Demo, Blog, and Submission Content Prep**
 🗓️ **Date:** June 20, 2025
 🎯 **Goal:** Create a winning Devpost submission with a killer demo, polished blog, and tight story. You built the system — now sell the vision.
 
@@ -2377,7 +2375,7 @@ Write down **2–3 bullet answers** for each and keep them handy.
 <br>
 <br>
 
-## **🧠 Phase 20 — Community Push + Backup Strategy + Optional Polish (June 21)**
+## **🧠 Phase 19 — Community Push + Backup Strategy + Optional Polish (June 21)**
 🎯 *Goal: Let the world know, protect your work, and give it final polish before bug day.*
 
 ---
@@ -2453,7 +2451,7 @@ Nice-to-haves (only do if everything else is solid):
 <br>
 <br>
 
-## **🪲 Phase 21 — Bug Day + Full Runthroughs (June 22)**
+## **🪲 Phase 20 — Bug Day + Full Runthroughs (June 22)**
 🎯 *Goal: Identify and fix every bug, broken flow, or confusing experience before the final submission.*
 
 ---
@@ -2531,7 +2529,7 @@ Test on:
 <br>
 <br>
 
-## **🚀 Phase 22 — Final Submission Day (June 23, 2025)**
+## **🚀 Phase 21 — Final Submission Day (June 23, 2025)**
 🎯 *Goal: Submit Thinkback.ai to the Google ADK Hackathon in peak condition, with a polished demo, perfect documentation, and zero last-minute errors.*
 
 ---
