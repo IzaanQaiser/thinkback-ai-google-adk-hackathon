@@ -119,4 +119,101 @@ Create a file `submission-checklist.md` and add the following:
 - [ ] ADK GitHub contribution link
 - [ ] Region: North America
 
+<br>
+<br>
+
+# 🧱 **Phase 1 — Project + Agent Scaffolding (June 2)**
+
+### 🔧 Backend Setup (ADK + API Base)
+
+* [ ] `cd backend/`
+* [ ] Create Python virtual environment:
+  `python3 -m venv venv && source venv/bin/activate`
+* [ ] Install dependencies:
+  `pip install agentkit fastapi uvicorn python-dotenv`
+* [ ] Create files:
+
+  * `main.py` (entrypoint for FastAPI)
+  * `agent_registry.py` (central agent loader)
+  * `router.py` (handles external API calls like /save, /search)
+* [ ] Run:
+  `uvicorn main:app --reload`
+  Confirm: `http://localhost:8000` works
+
+### 🤖 ADK Agent Scaffolding
+
+* [ ] `cd agents/`
+* [ ] Create folders:
+
+  * `classification_agent/`
+  * `nlp_agent/`
+  * `search_agent/`
+  * `conversational_agent/`
+  * `context_agent/`
+* [ ] Inside each folder, create:
+
+  * `agent.py`
+  * `__init__.py`
+* [ ] Inside `agent.py`, create base skeleton:
+
+```python
+from agentkit import Agent
+
+class [AgentName](Agent):
+    def __init__(self):
+        super().__init__(name="[agent_name]")
+
+    def run(self, message):
+        # Placeholder logic
+        return {"response": "placeholder"}
+```
+
+(Do this for all 5 agents)
+
+* [ ] Import each agent into `agent_registry.py` so they can talk
+
+---
+
+### 💻 Frontend Bootstrap
+
+* [ ] `cd frontend/`
+* [ ] Run:
+  `npx create-next-app@latest . --typescript`
+* [ ] Install Tailwind:
+  `npm install -D tailwindcss postcss autoprefixer`
+  `npx tailwindcss init -p`
+* [ ] Configure `tailwind.config.js` and `globals.css`
+* [ ] Install Shadcn/UI:
+  `npx shadcn-ui@latest init`
+
+### 🧪 Frontend Pages (Static for Now)
+
+* [ ] `/save`: input URL, tags, notes
+* [ ] `/dashboard`: list of saved content (mock data for now)
+* [ ] `/chat`: input box to talk to conversational agent
+
+---
+
+### 🔁 Local Agent-API Connect
+
+* [ ] `POST /api/save`: route to `classification_agent`
+* [ ] `POST /api/search`: route to `search_agent`
+* [ ] `POST /api/suggest`: route to `nlp_agent + search_agent`
+* [ ] Return dummy responses for now (e.g. `{ title: "Motivation Video", url: "..." }`)
+
+---
+
+### ✅ Deliverables by End of Day (June 1)
+
+* [ ] Backend live on `localhost:8000`
+* [ ] 5 agents created as Python classes using `agentkit`
+* [ ] Frontend has 3 basic pages (`/save`, `/chat`, `/dashboard`)
+* [ ] One dummy API call from frontend to backend (e.g. call /search and display result)
+* [ ] Push to GitHub (`dev` branch)
+
+---
+
+🔁 Once you're done, reply:
+**“Phase 1 complete — ready for June 2”**
+and I’ll drop **Phase 2: Core Agent Logic + Save Flow**. Let’s ride.
 
