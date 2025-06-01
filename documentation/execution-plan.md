@@ -89,16 +89,16 @@
 
 ### 🧾 Submission Checklist (start draft)
 
-Create a file `submission-checklist.md` and write:
+Create a file `submission-checklist.md` and add the following:
 
-* [ ]Hosted URL
-* [ ]GitHub repo (public)
-* [ ]Architecture diagram
-* [ ]Agent interaction diagram
-* [ ]Demo video (<3 min)
-* [ ]Text description (features, tools, Google Cloud usage)
-* [ ]Blog post
-* [ ]ADK GitHub contribution link
-* [ ]Region: North America
+- [ ]Hosted URL
+- [ ]GitHub repo (public)
+- [ ]Architecture diagram
+- [ ]Agent interaction diagram
+- [ ]Demo video (<3 min)
+- [ ]Text description (features, tools, Google Cloud usage)
+- [ ]Blog post
+- [ ]ADK GitHub contribution link
+- [ ]Region: North America
 
 
