@@ -948,6 +948,348 @@ Use ADK’s **agent engine** to wire this up:
 <br>
 
 
+## ✅ Phase 9 — Testing, Performance, and Final Submission (June 10)
+
+🗓️ **Date:** June 10, 2025
+🎯 **Goal:** Ensure Thinkback.ai is bug-free, fast, secure, and 100% ready for submission — no surprises on demo day.
+
+---
+
+### 🧪 Step 1 – Manual Testing (Core Features)
+
+* [ ] **Auth:**
+
+  * [ ] Sign in / Sign out works with Google
+  * [ ] User-specific data is isolated
+
+* [ ] **Save Flow:**
+
+  * [ ] Save a YouTube or TikTok link
+  * [ ] Classification is accurate (real or mock tags)
+
+* [ ] **Dashboard:**
+
+  * [ ] Shows saved cards cleanly
+  * [ ] Handles empty states
+
+* [ ] **Chat:**
+
+  * [ ] “I saved X” returns correct item
+  * [ ] “I feel Y” returns relevant suggestion
+  * [ ] Graceful fallback if no match found
+
+* [ ] **Timeline Feed:**
+
+  * [ ] Most recent + resurfaced entries shown
+  * [ ] Good loading performance
+
+<br>
+
+### 🚀 Step 2 – Performance Checklist
+
+* [ ] **Lazy load** content where needed
+* [ ] **Minify/optimize** assets
+* [ ] **Use Firebase Hosting preview** to test in production
+* [ ] Enable Vercel/Netlify or Firebase hosting for live URL
+
+<br>
+
+### 🔐 Step 3 – Security Check
+
+* [ ] Firebase rules:
+
+```json
+match /users/{userId} {
+  allow read, write: if request.auth.uid == userId;
+}
+```
+
+* [ ] Auth-protect any backend routes
+* [ ] Hide API keys (Gemini, Firebase) with `.env` and don’t commit them
+
+<br>
+
+### 🔍 Step 4 – Code Cleanup
+
+* [ ] Remove console logs, test artifacts
+* [ ] Comment complicated logic
+* [ ] Write 1–2 unit tests (even dummy ones) if time
+
+<br>
+
+### 📂 Step 5 – GitHub Final Polish
+
+* [ ] `README.md` includes:
+
+  * [ ] 1-paragraph project summary
+  * [ ] Tech stack
+  * [ ] Setup instructions
+  * [ ] Demo link
+  * [ ] Blog post link
+  * [ ] Submission credits
+
+* [ ] Folder structure cleaned and consistent
+
+* [ ] Add MIT License or similar (optional)
+
+<br>
+
+### 🧾 Step 6 – Final Submission Review
+
+Go to Devpost and double-check:
+
+* [ ] Project title ✅
+* [ ] Taglines ✅
+* [ ] Demo video ✅
+* [ ] GitHub link ✅
+* [ ] Tech used ✅
+* [ ] Blog post ✅ (bonus)
+* [ ] Open-source contribution ✅ (bonus)
+* [ ] Challenges + prizes targeted ✅
+* [ ] Description section fully filled ✅
+
+<br>
+
+### 💣 Step 7 – Backup and Save
+
+* [ ] Push all code to GitHub
+* [ ] Record final walkthrough video
+* [ ] Screenshot every major screen
+* [ ] Backup blog post as PDF
+
+<br>
+
+### ✅ Deliverables for June 10
+
+* [ ] All core features fully tested
+* [ ] Hosting link works
+* [ ] Final Devpost submission is *locked and loaded*
+* [ ] Codebase is clean, secure, and complete
+
+<br>
+<br>
+
+## 🧠 **Phase 10 — Full AI Integration + Remove All Hardcoding**
+
+🗓️ **Date:** June 9, 2025
+🎯 **Goal:** Replace every hardcoded logic path with real AI-powered behavior using Gemini and Firestore. This phase makes Thinkback.ai *actually* smart.
+
+---
+
+### ✅ Step 1 – Gemini-Only Classification Agent
+
+* [ ] Replace ALL dummy tagging logic in `classification_agent`
+* [ ] Use Gemini Pro to classify ANY content (YouTube URL, article, notes, etc.)
+
+```python
+# classification_agent/agent.py
+prompt = f"""
+You are an intelligent media classifier.
+
+Given this content:
+\"\"\"{message['content']}\"\"\"
+
+Return a JSON:
+{
+  "main_tag": "...",
+  "secondary_tags": [...],
+  "summary": "...",
+  "timestamp": ISO string
+}
+"""
+# Run Gemini call and return actual parsed JSON
+```
+
+✅ No more `"motivation"` placeholders.
+
+<br>
+
+### ✅ Step 2 – Gemini-Based NLP Agent
+
+* [ ] In `nlp_agent`, remove static keyword/emotion mapping
+* [ ] Replace with prompt like:
+
+```python
+prompt = f"""
+You are an NLP agent that detects emotion and gives search guidance.
+
+Input: "{message['query']}"
+
+Return JSON:
+{
+  "detected_emotion": "...",
+  "suggested_keywords": [...],
+  "response_tone": "...",
+}
+"""
+```
+
+✅ This makes the emotional queries actually smart and human.
+
+<br>
+
+### ✅ Step 3 – Search Agent → Semantic Matching (via Gemini)
+
+🔥 This is the BIGGEST upgrade.
+
+* [ ] Instead of:
+
+```python
+if "motivation" in entry["title"]:
+```
+
+* [ ] Use Gemini to compare a **user query** to saved **Firestore entries**:
+
+```python
+# search_agent/agent.py
+query = message["query"]
+entries = fetch_user_entries(uid)
+
+prompt = f"""
+User is searching for: "{query}"
+
+Here are their saved entries:
+
+{json.dumps(entries)}
+
+Pick the top 3 that best match the query. Return their IDs.
+"""
+# Gemini outputs 3 most relevant entry IDs
+```
+
+✅ Real semantic retrieval, not keyword nonsense.
+
+<br>
+
+### ✅ Step 4 – Conversational Agent Rewrite (No If-Else Hell)
+
+* [ ] Gemini handles **intent detection** (no hardcoded keyword ifs)
+
+```python
+prompt = f"""
+You are a conversational intent recognizer.
+
+Input: "{message['query']}"
+
+Return JSON:
+{
+  "intent": "direct_search" | "emotional_search" | "save_content",
+  "extracted_keywords": [...],
+  "requires_context": true/false
+}
+"""
+```
+
+* [ ] Route intelligently based on this.
+
+<br>
+
+### ✅ Step 5 – Remove ALL MockDB, Switch to Firestore Everywhere
+
+* [ ] Delete `mock_db.py`
+* [ ] Search agent, classification agent, NLP agent → all use Firestore
+* [ ] Add helpers to:
+
+```python
+from firebase_admin import firestore
+
+def fetch_user_entries(uid):
+    return db.collection("users").document(uid).collection("saves").stream()
+```
+
+✅ Real persistent, multi-user memory.
+
+<br>
+
+### ✅ Step 6 – Smart Tag Embeddings (Optional Polishing)
+
+* [ ] Use Gemini to generate **semantic embeddings** for tags/titles
+* [ ] Store embedding vector with each save
+
+```python
+prompt = f"""
+Embed this content title semantically for AI search: "{entry['title']}"
+Return a 768-d float array.
+"""
+```
+
+* [ ] Later: do cosine similarity search for best match.
+
+<br>
+
+### ✅ Step 7 – Smart Feed Logic → Full Gemini
+
+* [ ] Instead of:
+
+> “Show videos saved 7 days ago with ‘motivation’ tag”
+
+* [ ] Use prompt:
+
+```python
+prompt = f"""
+Today is June 9. The user previously saved these entries:
+{json.dumps(entries)}
+
+Select 2 entries to resurface today based on time, theme, emotion, or life context.
+
+Return their IDs + reason.
+"""
+```
+
+✅ Your Smart Feed is now a true AI assistant.
+
+<br>
+
+### ✅ Step 8 – Fallback Logic → Gemini-Generated Replies
+
+If nothing found in search or feed:
+
+```python
+prompt = f"""
+The system couldn’t find matching entries for the query: "{query}"
+
+Generate a graceful, supportive fallback response.
+"""
+```
+
+✅ You sound like ChatGPT, not a broken app.
+
+<br>
+
+### ✅ Step 9 – Final Gemini Util Tools
+
+* [ ] Create `/core/gemini_utils.py`:
+
+```python
+def call_gemini(prompt: str) -> str:
+    # Handles auth, retries, errors
+```
+
+✅ Centralized, reusable, clean.
+
+<br>
+
+### ✅ Step 10 – Full App Test (Post-AI Integration)
+
+* [ ] Save content → Gemini classifies + stores
+* [ ] Chat query (direct/emotional) → Gemini extracts intent, tags
+* [ ] Search runs → Gemini matches relevant saved items
+* [ ] Timeline + Smart Feed show meaningful resurfaced items
+* [ ] Fallbacks sound supportive and clear
+
+<br>
+
+### ✅ Deliverables by End of Day (June 11)
+
+* [ ] **No hardcoded logic remains**
+* [ ] Every agent uses Gemini for reasoning or classification
+* [ ] Firestore powers all user content
+* [ ] Smart Feed and Search fully semantic
+* [ ] Gemini prompt engineering lives in the app, not in your head
+
+
+
+
 
 
 
