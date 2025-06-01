@@ -1,15 +1,17 @@
 🔗 [google-adk-hackathon-technical](https://chatgpt.com/c/6837caba-9288-8011-908b-78f1c56a88d4) <br>
 🔗 [google-adk-hackathon-design](https://chatgpt.com/g/g-p-68398ad2d004819189e4eb95f7f3e602-google-adk-hackathon/c/6838ce55-b514-8011-9273-674dca2168d8)
 
-## execution-plan (010625-230625):
-### ✅ **Phase 0 — Setup + Planning + Foundation + Branding (June 1)**
+# execution-plan (010625-230625):
+## ✅ **Phase 0 — Setup + Planning + Foundation + Branding (June 1)**
 
-##### 🧠 Ideation & Final Planning
+### 🧠 Ideation & Final Planning
 - [ ] Finalize agent list (5 total: classification, nlp, search, conversation, context)
 - [ ] Finalize 3 core use case scenarios
 - [ ] Finalize MVP feature list (for June 1–23)
 - [ ] Finalize execution-plan (build phases + goal for each)
 - [ ] Make a file called `execution-plan.md` and push it to GitHub
+
+<br>
 
 ### 🛠️ Repo + Project Setup
 
@@ -23,9 +25,13 @@
   * `/backend`
 * [ ] Create `.gitignore`, `.env.example`, and initial commit
 
+<br>
+
 ### 📚 Learn the Tech & Platform (Google ADK)
 
 * [ ] [Read Google Hackathon Resources](https://googlecloudmultiagents.devpost.com/resources)
+
+<br>
 
 ### ☁️ Google Cloud Setup
 
@@ -38,6 +44,8 @@
 * [ ] Create service account + download credentials JSON
 * [ ] Store in `/infra/credentials/service-account.json`
 
+<br>
+
 ### 🧪 Local Dev Tools
 
 * [ ] Install Node.js (via nvm or directly)
@@ -48,6 +56,8 @@
 * [ ] Clone ADK sample repo and run it locally
 * [ ] Confirm it works (i.e. run example with 2 agents)
 
+<br>
+
 ### 🔁 Diagrams for System Planning
 
 * [ ] Sketch **System Flow Diagram** (how data moves end-to-end)
@@ -56,6 +66,8 @@
 * [ ] Upload `agent-interaction-diagram.png` to `/docs/`
 * [ ] Sketch **Dataflow Diagram** (Firestore, Gemini, etc.)
 * [ ] Upload `dataflow-diagram.png` to `/docs/`
+
+<br>
 
 ### 🎨 Branding & Storytelling
 
@@ -69,6 +81,8 @@
 * [ ] Pick color palette (background, text, accent)
 * [ ] Save in `branding/branding-guide.md`
 
+<br>
+
 ### 📝 Blog Prep (for +0.4 bonus points)
 
 * [ ] Pick blog platform: Dev.to, Medium, Hashnode, Substack
@@ -78,6 +92,8 @@
 * [ ] Create blog outline (intro, pain point, agents, tech stack, lessons)
 * [ ] Save as `blog-outline.md`
 
+<br>
+
 ### 📹 Demo Prep
 
 * [ ] Install screen recording tool (pick one):
@@ -86,6 +102,8 @@
   * Loom
   * Screen Studio (paid, cleanest)
 * [ ] Do 1 test recording (30 sec walkthrough)
+
+<br>
 
 ### 🧾 Submission Checklist (start draft)
 
