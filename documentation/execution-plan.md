@@ -593,7 +593,7 @@ fetch("/api/save", {
 * [ ] Frontend login and logout flow works
 * [ ] You can save, chat, and view dashboard **per user**
 
-## 🤖 Phase 5 — Gemini API + Semantic Understanding (June 6)
+## 🤖 **Phase 5 — Gemini API + Semantic Understanding (June 6)**
 
 🗓️ **Date: June 6, 2025**
 🎯 Goal: Add **real semantic processing** with **Gemini Pro**
@@ -812,7 +812,7 @@ Make sure all saved entries in Firestore include:
 <br>
 <br>
 
-## 🤖 Phase 7 — Agent Communication & Context Pipeline (June 8)
+## 🤖 **Phase 7 — Agent Communication & Context Pipeline (June 8)**
 
 🗓️ **Date:** June 8, 2025
 🎯 **Goal:** Stitch all 5 agents into a real working **multi-agent pipeline** using Google ADK — so they can pass messages, context, and results between each other.
@@ -948,7 +948,7 @@ Use ADK’s **agent engine** to wire this up:
 <br>
 
 
-## ✅ Phase 9 — Testing, Performance, and Final Submission (June 10)
+## ✅ **Phase 8 — Testing, Performance, and Final Submission (June 10)**
 
 🗓️ **Date:** June 10, 2025
 🎯 **Goal:** Ensure Thinkback.ai is bug-free, fast, secure, and 100% ready for submission — no surprises on demo day.
@@ -1069,7 +1069,7 @@ Go to Devpost and double-check:
 <br>
 <br>
 
-## 🧠 **Phase 10 — Full AI Integration + Remove All Hardcoding**
+## 🧠 **Phase 9 — Full AI Integration + Remove All Hardcoding**
 
 🗓️ **Date:** June 9, 2025
 🎯 **Goal:** Replace every hardcoded logic path with real AI-powered behavior using Gemini and Firestore. This phase makes Thinkback.ai *actually* smart.
@@ -1286,6 +1286,472 @@ def call_gemini(prompt: str) -> str:
 * [ ] Firestore powers all user content
 * [ ] Smart Feed and Search fully semantic
 * [ ] Gemini prompt engineering lives in the app, not in your head
+
+<br>
+<br>
+
+## ✅ **Phase 10 – June 12: Global Context Agent + Contextual Retrieval**
+
+**Goal:** 
+- Make Thinkback truly *aware* of real-world context — news, events, seasons, trends — and use that to suggest relevant saved content.
+- Implement the **Global Context Agent**, and pipe its context into the smart feed + suggestion workflows.
+
+---
+
+### 1. **Design Context Scope**
+
+* [ ] Define which global events to consider (e.g., stock market, seasonal dates, major holidays, news trends).
+* [ ] Create a sample global context object schema:
+
+```ts
+{
+  timestamp: "2025-06-12T12:00:00Z",
+  market_status: "bearish",
+  date_marker: "early summer",
+  global_keywords: ["student burnout", "summer vacation", "AI layoffs"]
+}
+```
+
+<br>
+
+### 2. **Create `global-context-agent`**
+
+* [ ] Create new agent using `adk init agent global-context-agent`
+* [ ] Add logic to:
+
+  * [ ] Use Gemini to summarize world context from a daily trending topics list (can use Google News RSS, pre-curated headlines, or dummy source for now).
+  * [ ] Pipe this as a formatted JSON to downstream agents.
+
+<br>
+
+### 3. **Inject Global Context into Workflows**
+
+* [ ] Modify **Search Agent** and **Suggestion Flow** to:
+
+  * Accept `globalContext` alongside `nlpContext` and `userQuery`
+  * Match saved content tags/metadata against trending or relevant keywords
+  * Add small boost to matching content that’s *globally relevant right now*
+
+<br>
+
+### 4. **Use Gemini to Parse Global→User Matching**
+
+* [ ] Create a Gemini prompt template that says:
+
+```plaintext
+Given a user’s saved content and the following global trends:
+[JSON globalContext]
+Which content is likely to feel relevant, helpful, or interesting for the user *right now*?
+Return top 3 item IDs and short explanations.
+```
+
+<br>
+
+### 5. **Update Smart Feed**
+
+* [ ] In Smart Feed pipeline:
+
+  * [ ] Fetch global context
+  * [ ] Run matching via search agent
+  * [ ] Display a “Because of recent events” label on surfaced content
+
+<br>
+
+### 💄 Bonus Polish (Optional)
+
+* [ ] Add a subtle banner above Smart Feed:
+
+  > 🛰️ "These recommendations were based on current global trends."
+* [ ] Log global context to Firestore under `/analytics/globalSnapshots` for inspection
+* [ ] Store last-used global context per user to avoid duplicate surfacing
+
+<br>
+<br>
+
+## 📓 **Phase 11 — Journaling + Reflective AI Loop**
+
+🗓️ **Date:** June 13, 2025
+🎯 **Goal:** Let users write emotional/reflective journal entries and have Thinkback.ai extract feelings, summarize thoughts, suggest relevant saved content, and even generate action plans.
+
+---
+
+### ✅ Step 1 — Create `/journal` Page (Frontend)
+
+* [ ] Add new route: `pages/journal.tsx`
+
+* [ ] Design layout:
+
+  * Large `textarea` input for journal entry
+  * “Analyze” button
+  * Space below to show:
+
+    * Summary of journal
+    * Detected emotion/tags
+    * Suggested saved content
+    * Suggested action plan (if applicable)
+
+* [ ] Optional:
+
+  * Store past entries and show them in a collapsible list
+
+<br>
+
+### ✅ Step 2 — Backend Endpoint: `/analyze-journal`
+
+In `router.py`:
+
+```python
+@router.post("/analyze-journal")
+async def analyze_journal(req: Request):
+    body = await req.json()
+    content = body["content"]
+    uid = verify_token(req.headers["Authorization"].split("Bearer ")[1])
+
+    result = nlp_agent.run({"query": content})
+    summary = summarization_agent.run({"content": content})
+
+    matching = search_agent.run({"query": result["keywords"]})
+    
+    return {
+        "summary": summary,
+        "emotion": result["emotion"],
+        "keywords": result["keywords"],
+        "matches": matching["results"]
+    }
+```
+
+<br>
+
+### ✅ Step 3 — NLP Agent (Emotional Classifier)
+
+In `nlp_agent/agent.py` (if not already real AI):
+
+* [ ] Use Gemini to classify emotion and extract keywords.
+
+```python
+def run(self, message):
+    prompt = f"""
+    You're an AI therapist. A user wrote:
+
+    \"{message['query']}\"
+
+    Extract:
+    - Main emotion (e.g., burnout, motivation, anxiety)
+    - 3 keywords/topics
+    Return JSON.
+    """
+    # Send this to Gemini
+```
+
+<br>
+
+### ✅ Step 4 — Summarization Agent
+
+Create new agent: `summarization_agent/agent.py`
+
+```python
+from agentkit import Agent
+import requests, os
+
+class SummarizationAgent(Agent):
+    def __init__(self):
+        super().__init__(name="summarization_agent")
+
+    def run(self, message):
+        content = message["content"]
+        prompt = f"Summarize this journal entry in 1–2 sentences:\n{content}"
+        # Send to Gemini (reuse same pattern)
+```
+
+Register it in `agent_registry.py`.
+
+<br>
+
+### ✅ Step 5 — Match Journal With Saved Media
+
+* [ ] From `keywords` (from NLP agent), call `search_agent`
+* [ ] If matches found:
+
+  * Return top 3 entries
+  * Include in response to frontend
+
+<br>
+
+### ✅ Step 6 — AI-generated Reflection Plan (Optional Polish)
+
+* [ ] Add an additional prompt to Gemini like:
+
+```txt
+Based on this journal entry:
+"{entry}"
+
+Generate a simple 3-step action plan to help this user feel better or solve their issue. Format as a bullet list.
+```
+
+→ Display under "Suggested Next Steps"
+
+<br>
+
+### ✅ Step 7 — Frontend Display (Final Polish)
+
+After journal is submitted:
+
+* Show cards:
+
+  * 📝 **Summary** of their journal
+  * 😥 **Emotion** + keywords
+  * 💾 **Saved media** they should revisit
+  * ✅ **Action Plan** (if available)
+
+* Use beautiful card UI (like dashboard)
+
+<br>
+
+### ✅ Deliverables by End of Day (June 13)
+
+* [ ] `/journal` route exists
+* [ ] Users can write emotional/reflective entries
+* [ ] Gemini extracts emotions, summary, and keywords
+* [ ] Search agent finds relevant saved content
+* [ ] Optional: Gemini suggests an action plan
+* [ ] Frontend shows clean, calm, helpful UI
+* [ ] Everything is tied into the multi-agent loop properly
+
+<br>
+<br>
+
+## 🧠 **Phase 12 – Journal Feature Full Integration**
+
+---
+
+### ✍️ 1. **Frontend: Journal UI Page**
+
+* [ ] Create new page: `/journal`
+* [ ] UI Components:
+
+  * [ ] **Text editor** (`<textarea>` or rich text)
+  * [ ] **“Analyze Entry”** button
+  * [ ] Display area for:
+
+    * Summary
+    * Tags/emotions
+    * Suggested media
+* [ ] Add success/error states + loading indicators
+* [ ] Add page to navbar + route structure
+
+<br>
+
+### 🧠 2. **Backend: Add `/journal` Route**
+
+In `backend/router.py`:
+
+* [ ] Create endpoint: `POST /journal`
+* [ ] Payload: `{ uid, content }`
+* [ ] Steps:
+
+  * [ ] Verify token
+  * [ ] Run journal entry through **Gemini**:
+
+    * Get emotion
+    * Get key insights
+    * Get suggested positive focus
+  * [ ] Store result in `firestore.users.{uid}.journals`
+
+Example schema:
+
+```json
+{
+  "content": "I've been really tired and unfocused...",
+  "summary": "Feeling burnt out due to workload",
+  "emotion": "burnout",
+  "positive_tags": ["focus", "discipline", "routine"],
+  "timestamp": "2025-06-13T12:00:00Z"
+}
+```
+
+<br>
+
+### 🔍 3. **NLP Agent: Journal Mode**
+
+In `nlp_agent/agent.py`:
+
+* [ ] Add `mode="journal"` logic:
+
+```python
+if message.get("mode") == "journal":
+    # Specialized Gemini prompt for journaling
+    prompt = f"""
+You're a helpful assistant that analyzes personal journal entries.
+Given this journal text:
+\"\"\"
+{message['content']}
+\"\"\"
+
+1. Summarize it in 1–2 lines.
+2. Identify emotional tone (burnout, anxiety, optimism, etc.)
+3. Suggest 3 helpful focus areas or keywords for the user.
+
+Return a JSON like:
+{{
+  "summary": "...",
+  "emotion": "...",
+  "positive_tags": ["...", "...", "..."]
+}}
+"""
+```
+
+<br>
+
+### 📚 4. **Firestore: Journal Collection**
+
+* [ ] Path: `users/{uid}/journals`
+* [ ] Fields:
+
+  * `content`, `summary`, `emotion`, `positive_tags`, `timestamp`
+* [ ] Add optional field: `suggested_media` (can come later)
+
+<br>
+
+### 💡 5. **Smart Feed: Journal-Driven Suggestions**
+
+* [ ] In context agent:
+
+  * If user posts a journal entry, use `emotion` + `positive_tags`
+  * Query media that matches those tags
+  * Surface old saved entries relevant to the journal state
+
+<br>
+
+### 📆 6. **Timeline View Update**
+
+* [ ] Add journal entries to main timeline (different icon/emoji)
+* [ ] Color code by emotion (e.g. 🔴 burnout, 💙 calm, ⚡ motivation)
+* [ ] Add filter: `show only journal entries`
+
+<br>
+
+### 🧪 7. **Testing Checklist**
+
+* [ ] Write & save journal entry
+* [ ] Confirm Gemini analysis
+* [ ] Confirm Firestore entry created
+* [ ] Check Smart Feed updates
+* [ ] View entry in timeline
+
+<br>
+
+### ✅ Deliverables for June 13
+
+* [ ] `/journal` page live with full UX
+* [ ] Backend route stores analyzed entries
+* [ ] NLP agent processes journal text via Gemini
+* [ ] Entries saved to Firestore correctly
+* [ ] Timeline and Smart Feed include journal-driven content
+* [ ] All connected pieces are working smoothly
+* [ ] Push to GitHub and test user flow E2E
+
+<br>
+<br>
+
+## **Phase 14 — Voice Journaling, Reminders & Memory Agent Integration**
+
+---
+
+### 🎤 Step 1 — Voice-to-Text Journaling Input (Frontend)
+
+* [ ] Install the Web Speech API (browser-native — no extra dependency)
+* [ ] Add a microphone icon to `/journal` page
+* [ ] On click: start voice capture using `SpeechRecognition`
+* [ ] Auto-fill the journal `textarea` with transcribed text
+* [ ] Add toggle: 🎙️ “Start/Stop Recording”
+
+```ts
+const recognition = new window.SpeechRecognition();
+recognition.onresult = (event) => {
+  const transcript = event.results[0][0].transcript;
+  setJournalInput(transcript);
+};
+```
+
+✅ Now users can speak journal entries and submit without typing.
+
+<br>
+
+### ⏰ Step 2 — Smart Reminder System (Passive + Trigger-Based)
+
+**Option A — Passive Reminder Card (Frontend)**
+
+* [ ] If no journal entry exists for today:
+
+  * Show: “📝 Feeling something today? Log it before the day ends.”
+* [ ] If last entry was emotional:
+
+  * Show: “😔 Yesterday you felt overwhelmed. Want to reflect today?”
+
+**Option B — Triggered Suggestions (Agent)**
+
+* [ ] In the **context\_agent**, add:
+
+  * “Has this user journaled today?”
+  * If not, and user says something emotion-related → return journaling nudge
+
+✅ You nudge users **organically** without being annoying.
+
+<br>
+
+### 🧠 Step 3 — Journal Memory Agent Logic
+
+Update `context_agent` to do the following:
+
+* [ ] When user enters `/chat` with emotional tone:
+
+  * Search recent journal entries (past 7 days)
+  * Extract most common emotions and topics
+  * Inject them into the context object (e.g. `"recent_emotions": ["burnout", "self-doubt"]`)
+* [ ] Use this for better NLP-agent suggestions or even surface past insights:
+
+  * *“Last time you felt like this, you wrote: 'I need to sleep more.' Want to revisit that?”*
+
+✅ This makes journaling **actually useful**, not just decorative.
+
+<br>
+
+### 🔁 Step 4 — Link Journal to Timeline & Smart Feed
+
+* [ ] Add journal entries to the **timeline** with different visual tags (`type: journal`)
+* [ ] In Smart Feed logic:
+
+  * Resurface journal entries from 1/2/4 weeks ago
+  * Show past thoughts tied to current emotional states
+* [ ] Add filters:
+
+  * View only saved content
+  * View only journal entries
+  * View all
+
+✅ This gives users a unified memory experience — thoughts + media.
+
+<br>
+
+### ✨ Step 5 — Final Polish for `/journal` Page
+
+* [ ] Add icons based on emotion detected in Gemini response (😔 🧠 ⚡ 🪷)
+* [ ] Clean up Gemini reflection output (paragraphs, headers, etc.)
+* [ ] Add loading spinner when analyzing entry
+* [ ] Allow deleting or editing journal entries (Firestore + frontend)
+* [ ] Auto-scroll to response after submission
+
+<br>
+
+### ✅ Deliverables by End of Day (June 14)
+
+* [ ] Voice journaling works
+* [ ] Smart journaling reminder shown when needed
+* [ ] Journal memory integrated into agent reasoning
+* [ ] Journal entries appear in timeline + smart feed
+* [ ] `/journal` polished for demo-ready status
+
+
 
 
 
