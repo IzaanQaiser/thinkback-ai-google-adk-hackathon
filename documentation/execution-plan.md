@@ -1653,7 +1653,7 @@ Return a JSON like:
 <br>
 <br>
 
-## **Phase 14 — Voice Journaling, Reminders & Memory Agent Integration**
+## **Phase 13 — Voice Journaling, Reminders & Memory Agent Integration**
 
 ---
 
@@ -1754,7 +1754,7 @@ Update `context_agent` to do the following:
 <br>
 <br>
 
-## **Phase 15 — Insights Dashboard, Export, & Final UX Polish**
+## **Phase 14 — Insights Dashboard, Export, & Final UX Polish**
 🗓️ **Date:** June 15, 2025
 🎯 **Goal:** Give users a full-circle experience with exportable data, visual insights, and polished UX — making the app demo- and investor-ready.
 
