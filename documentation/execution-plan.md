@@ -3,7 +3,7 @@
 ## ✅ **Phase 0 — Setup + Planning + Foundation + Branding (June 1)**
 
 ### 🧠 Ideation & Final Planning
-- [ ] Finalize agent list (5 total: classification, nlp, search, conversation, context)
+- [x] Finalize agent list (5 total: classification, nlp, search, conversation, context)
 - [ ] Finalize 3 core use case scenarios
 - [ ] Finalize MVP feature list (for June 1–23)
 - [ ] Finalize execution-plan (build phases + goal for each)
