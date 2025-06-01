@@ -17,7 +17,7 @@
 * [ ] Initialize with README + MIT License
 * [ ] Add folders:
 
-  * `/docs`
+  * `/documentation`
   * `/agents`
   * `/frontend`
   * `/backend`
@@ -26,9 +26,6 @@
 ### 📚 Learn the Tech & Platform (Google ADK)
 
 * [ ] [Read Google Hackathon Resources](https://googlecloudmultiagents.devpost.com/resources)
-* [ ] Read through [agentkit-python GitHub](https://github.com/agentkit/agentkit-python)
-* [ ] Read through [agent-engine GitHub](https://github.com/agentkit/agent-engine)
-* [ ] Watch 1 sample video on ADK (from YouTube or Devpost)
 
 ### ☁️ Google Cloud Setup
 
@@ -94,18 +91,14 @@
 
 Create a file `submission-checklist.md` and write:
 
-* [ ] \[ ] Hosted URL
-* [ ] \[ ] GitHub repo (public)
-* [ ] \[ ] Architecture diagram
-* [ ] \[ ] Agent interaction diagram
-* [ ] \[ ] Demo video (<3 min)
-* [ ] \[ ] Text description (features, tools, Google Cloud usage)
-* [ ] \[ ] Blog post
-* [ ] \[ ] ADK GitHub contribution link
-* [ ] \[ ] Region: North America
+* [ ]Hosted URL
+* [ ]GitHub repo (public)
+* [ ]Architecture diagram
+* [ ]Agent interaction diagram
+* [ ]Demo video (<3 min)
+* [ ]Text description (features, tools, Google Cloud usage)
+* [ ]Blog post
+* [ ]ADK GitHub contribution link
+* [ ]Region: North America
 
----
 
-💬 Once you finish this checklist, reply:
-**“Ready for Phase 1”**
-and I’ll give you the **June 1 build plan** — feature by feature, no fluff, all speed.
